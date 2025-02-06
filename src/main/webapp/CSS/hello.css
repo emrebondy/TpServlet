@@ -1,0 +1,64 @@
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur principal */
+.container {
+    background: white;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Message principal */
+h1 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.username {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Sous-texte */
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Conteneur des boutons */
+.button-container {
+    margin-top: 20px;
+}
+
+/* Styles des boutons */
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Bouton Menu */
+.btn-menu {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.btn-menu:hover {
+    background-color: #0056b3;
+}

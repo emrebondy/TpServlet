@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Timestamp;
 
 @WebServlet("/updateAnnonce")
 public class AnnonceUpdateServlet extends HttpServlet {
@@ -31,7 +32,7 @@ public class AnnonceUpdateServlet extends HttpServlet {
             Dao<Annonce> annonceDao = new AnnonceDao(conn);
 
             // Création de l'objet Annonce avec les nouvelles valeurs
-            Annonce annonce = new Annonce(id, title, description, adress, mail, null);
+            Annonce annonce = new Annonce(id, title, description, adress, mail, new Timestamp(System.currentTimeMillis()));
 
             // Mise à jour dans la base de données
             boolean success = annonceDao.update(annonce);

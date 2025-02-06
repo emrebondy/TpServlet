@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Liste des Annonces</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/annonceList.css">
 </head>
 <body>
 <div class="annonce-container">
