@@ -11,19 +11,19 @@
     <h2>✏️ Modifier une Annonce</h2>
 
     <form method="post" action="updateAnnonce">
-        <input type="hidden" name="id" value="${param.id}">
+        <input type="hidden" name="id" value="${annonce.id}">
 
         <label for="title">📌 Titre :</label>
-        <input type="text" id="title" name="title" value="${param.title}" required>
+        <input type="text" id="title" name="title" value="${annonce.title}" required>
 
         <label for="description">📝 Description :</label>
-        <textarea id="description" name="description" rows="4" required>${param.description}</textarea>
+        <textarea id="description" name="description" rows="4" required>${annonce.description}</textarea>
 
         <label for="adress">📍 Adresse :</label>
-        <input type="text" id="adress" name="adress" value="${param.adress}" required>
+        <input type="text" id="adress" name="adress" value="${annonce.adress}" required>
 
         <label for="mail">📧 Email :</label>
-        <input type="email" id="mail" name="mail" value="${param.mail}" required>
+        <input type="email" id="mail" name="mail" value="${annonce.mail}" required>
 
         <button type="submit">✅ Sauvegarder</button>
     </form>

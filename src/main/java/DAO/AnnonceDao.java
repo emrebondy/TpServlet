@@ -49,16 +49,19 @@ public class AnnonceDao extends Dao<Annonce> {
         }
     }
 
+
     @Override
     public Annonce find(int id) {
-        Annonce annonce = null;
         String query = "SELECT * FROM annonce WHERE id = ?";
+        Annonce annonce = null;
 
-        try (PreparedStatement stmt = this.connect.prepareStatement(query)) {
+        try (PreparedStatement stmt = this.connect.prepareStatement(query,
+                ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
+
             stmt.setInt(1, id);
             ResultSet result = stmt.executeQuery();
 
-            if (result.first()) {
+            if (result.first()) { // ✅ Maintenant possible grâce à SCROLL_INSENSITIVE
                 annonce = new Annonce(
                         result.getInt("id"),
                         result.getString("title"),
@@ -68,12 +71,12 @@ public class AnnonceDao extends Dao<Annonce> {
                         result.getTimestamp("date")
                 );
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return annonce;
     }
+
 
     @Override
     public ArrayList<Annonce> list() {

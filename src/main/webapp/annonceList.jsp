@@ -25,7 +25,7 @@
                         </p>
 
                         <!-- Bouton Modifier -->
-                        <form action="AnnonceEdit.jsp" method="GET">
+                        <form action="editAnnonce" method="GET">
                             <input type="hidden" name="id" value="${annonce.id}">
                             <button type="submit">✏️ Modifier</button>
                         </form>
