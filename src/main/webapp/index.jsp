@@ -17,7 +17,7 @@
     <button type="submit">Voir les annonces</button>
 </form>
 
-<form action="AnnonceAdd.jsp" method="GET">
+<form action="annonceAdd.jsp" method="GET">
     <button type="submit">➕ Ajouter une Annonce</button>
 </form>
 

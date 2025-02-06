@@ -31,7 +31,7 @@ public class AnnonceAdd extends HttpServlet {
             if (title == null || title.isEmpty() || description == null || description.isEmpty()
                     || adress == null || adress.isEmpty() || mail == null || mail.isEmpty()) {
                 request.setAttribute("error", "Tous les champs sont obligatoires !");
-                request.getRequestDispatcher("AnnonceAdd.jsp").forward(request, response);
+                request.getRequestDispatcher("annonceAdd.jsp").forward(request, response);
                 return;
             }
 
@@ -50,13 +50,13 @@ public class AnnonceAdd extends HttpServlet {
                 response.sendRedirect("index.jsp");
             } else {
                 request.setAttribute("error", "❌ Erreur lors de l'ajout de l'annonce.");
-                request.getRequestDispatcher("AnnonceAdd.jsp").forward(request, response);
+                request.getRequestDispatcher("annonceAdd.jsp").forward(request, response);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("error", "❌ Une erreur est survenue : " + e.getMessage());
-            request.getRequestDispatcher("AnnonceAdd.jsp").forward(request, response);
+            request.getRequestDispatcher("annonceAdd.jsp").forward(request, response);
         }
     }
 }

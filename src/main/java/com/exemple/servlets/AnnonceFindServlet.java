@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.Connection;
 
 @WebServlet("/editAnnonce")
-public class AnnonceFind extends HttpServlet {
+public class AnnonceFindServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,7 +34,7 @@ public class AnnonceFind extends HttpServlet {
             // Vérifier si l'annonce existe
             if (annonce != null) {
                 request.setAttribute("annonce", annonce);
-                request.getRequestDispatcher("AnnonceEdit.jsp").forward(request, response);
+                request.getRequestDispatcher("annonceEdit.jsp").forward(request, response);
             } else {
                 response.sendRedirect("annonce"); // Redirige vers la liste si l'ID est invalide
             }

@@ -24,10 +24,10 @@ public abstract class Dao<T> {
 
     /**
      * Methode pour effacer un item
-     * @param obj
+     * @param id
      * @return
      */
-    public abstract boolean delete(T obj);
+    public abstract boolean delete(int id);
 
     /**
      * Methode de mise à jour

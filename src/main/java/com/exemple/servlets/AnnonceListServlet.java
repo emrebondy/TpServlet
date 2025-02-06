@@ -14,7 +14,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 @WebServlet("/annonce")
-public class AnnonceServlet extends HttpServlet {
+public class AnnonceListServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
 

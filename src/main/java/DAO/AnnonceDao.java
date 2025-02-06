@@ -34,21 +34,19 @@ public class AnnonceDao extends Dao<Annonce> {
     }
 
     @Override
-    public boolean delete(Annonce obj) {
+    public boolean delete(int id) {
         String query = "DELETE FROM annonce WHERE id = ?";
 
         try (PreparedStatement stmt = this.connect.prepareStatement(query)) {
-            stmt.setInt(1, obj.getId());
+            stmt.setInt(1, id);
 
             int rowsDeleted = stmt.executeUpdate();
             return rowsDeleted > 0;
-
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
     }
-
 
     @Override
     public Annonce find(int id) {

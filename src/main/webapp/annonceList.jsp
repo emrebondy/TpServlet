@@ -29,6 +29,12 @@
                             <input type="hidden" name="id" value="${annonce.id}">
                             <button type="submit">✏️ Modifier</button>
                         </form>
+
+                        <!-- Bouton Supprimer -->
+                        <form action="deleteAnnonce" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');">
+                            <input type="hidden" name="id" value="${annonce.id}">
+                            <button type="submit" class="delete-button">🗑️ Supprimer</button>
+                        </form>
                     </li>
                 </c:forEach>
             </ul>

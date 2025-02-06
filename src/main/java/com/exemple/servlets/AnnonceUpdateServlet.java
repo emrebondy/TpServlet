@@ -41,13 +41,13 @@ public class AnnonceUpdateServlet extends HttpServlet {
                 response.sendRedirect("index.jsp"); // Redirige vers l'accueil
             } else {
                 request.setAttribute("error", "❌ Erreur lors de la mise à jour.");
-                request.getRequestDispatcher("AnnonceEdit.jsp").forward(request, response);
+                request.getRequestDispatcher("annonceEdit.jsp").forward(request, response);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("error", "❌ Une erreur est survenue : " + e.getMessage());
-            request.getRequestDispatcher("AnnonceEdit.jsp").forward(request, response);
+            request.getRequestDispatcher("annonceEdit.jsp").forward(request, response);
         }
     }
 }
