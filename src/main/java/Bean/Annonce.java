@@ -1,22 +1,40 @@
 package Bean;
 
+
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
-public class Annonce {
+@Entity
+@Table(name = "annonce")
+public class Annonce implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "title", nullable = false, length = 64)
     private String title;
+
+    @Column(name = "description", nullable = false, length = 256)
     private String description;
+
+    @Column(name = "adress", nullable = false, length = 64)
     private String adress;
+
+    @Column(name = "mail", nullable = false, length = 64)
     private String mail;
-    private Timestamp date;
 
-    // Constructeur par défaut
-    public Annonce() {
-    }
+    @Column(name = "date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date;
 
-    // Constructeur avec paramètres
-    public Annonce(int id, String title, String description, String adress, String mail, Timestamp date) {
-        this.id = id;
+    public Annonce() {}
+
+    public Annonce(int i,String title, String description, String adress, String mail, Date date) {
+        this.id = i;
         this.title = title;
         this.description = description;
         this.adress = adress;
@@ -24,7 +42,7 @@ public class Annonce {
         this.date = date;
     }
 
-    // Getters et Setters
+
     public int getId() {
         return id;
     }
@@ -66,23 +84,10 @@ public class Annonce {
     }
 
     public Timestamp getDate() {
-        return date;
+        return (Timestamp) date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(Date date) {
         this.date = date;
-    }
-
-    // Méthode toString()
-    @Override
-    public String toString() {
-        return "Annonce{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", adress='" + adress + '\'' +
-                ", mail='" + mail + '\'' +
-                ", date=" + date +
-                '}';
     }
 }

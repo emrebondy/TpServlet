@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Bean.Annonce" table="annonce">
+
+        <!-- Clé primaire -->
+        <id name="id" column="id" type="int">
+            <generator class="identity"/>
+        </id>
+
+        <!-- Colonnes -->
+        <property name="title" column="title" type="string" length="64" not-null="true"/>
+        <property name="description" column="description" type="string" length="256" not-null="true"/>
+        <property name="adress" column="adress" type="string" length="64" not-null="true"/>
+        <property name="mail" column="mail" type="string" length="64" not-null="true"/>
+        <property name="date" column="date" type="timestamp" not-null="true"/>
+
+    </class>
+</hibernate-mapping>
